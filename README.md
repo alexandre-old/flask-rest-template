@@ -1,0 +1,3 @@
+# flask-rest-tmp
+
+Um template (a.k.a boilerplate) para uma aplicação REST...
