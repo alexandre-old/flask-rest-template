@@ -1,0 +1,6 @@
+__pycache__/
+*.pyc
+
+# Secret files...
+production_conn.json
+testing_conn.json
