@@ -1,5 +1,5 @@
 import flask
-from . import extensions, example, config
+from . import extensions, users, config
 
 
 def create_app(config_name):
@@ -32,7 +32,6 @@ def register_extensions(app):
     """
     extensions.db.init_app(app)
     extensions.jwt.init_app(app)
-    # extensions.api.init_app(app, errors=errors.json_error)
     extensions.api.init_app(app)
 
     return None
@@ -45,6 +44,6 @@ def register_blueprints(app):
     :returns: TODO
 
     """
-    app.register_blueprint(example.blueprint)
+    app.register_blueprint(users.blueprint)
 
     return None
