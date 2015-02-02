@@ -1,6 +1,6 @@
 # Flask REST Template
 
-A template or boilerplate for a Flask REST application. This repository is a set of ideas that I read, listen or tought.
+A template or boilerplate for a Flask REST application. This repository is a set of ideas that I have reading, listening or thougting about.
 
 # How to test or start a project using this template:
 
