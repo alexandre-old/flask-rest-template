@@ -1,6 +1,9 @@
 # Flask REST Template
 
-A template or boilerplate for a Flask REST application. This repository is a set of ideas that I read, listen or tought.
+A template or boilerplate for a Flask REST application. This template starts with flask-restul, mongoengine, gunicorn 
+and more...there are the requirements to deploy on heroku.
+
+I hope start a branch using SQLAlchemy too...
 
 # How to test or start a project using this template:
 
