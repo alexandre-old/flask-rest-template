@@ -28,7 +28,7 @@ license, but if I choose another license, I'm sure that would be GPL/AGPL V3. =]
 
 # About the design:
 
-I will start to write about my studies [here](alexandre.github.io), but in portuguese. =]
+I will start to write about my studies [here](http://alexandre.github.io), but in portuguese. =]
 
 # P.S:
 
