@@ -1,11 +1,11 @@
 import bson
 
 
-def is_an_objectid_valid(str):
+def is_a_valid_objectid(objid):
     """Verify if a string is a valid value as ObjectId
 
-    :str: a string value.
+    :objid: a string value.
     :returns: True or False
 
     """
-    return bson.objectid.ObjectId(str).is_valid()
+    return bson.objectid.ObjectId.is_valid(objid)
