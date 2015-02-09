@@ -2,7 +2,7 @@ class User():
 
     """Docstring for User. """
 
-    def get_user(self, id_or_username):
+    def get_user(self, id, username):
         """TODO: Docstring for get_user.
 
         :id_or_username: TODO

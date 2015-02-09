@@ -8,7 +8,7 @@ def objectid_parser(objid):
     :returns: objid
 
     """
-    if utils.is_an_objectid_valid(objid) is False:
+    if utils.is_a_valid_objectid(objid) is False:
         raise ValueError("Invalid ObjectId")
 
     return objid
