@@ -1,7 +1,7 @@
 from app import utils
 
 
-def val_objectid(objid):
+def objectid_parser(objid):
     """TODO: Docstring for val_objectid.
 
     :objid: A string that should represent an ObjectId
