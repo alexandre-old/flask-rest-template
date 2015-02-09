@@ -4,3 +4,6 @@ __pycache__/
 # Secret files...
 production_conn.json
 testing_conn.json
+
+#coverage
+.coverage
