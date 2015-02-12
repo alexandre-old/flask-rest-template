@@ -7,3 +7,5 @@ testing_conn.json
 
 #coverage
 .coverage
+
+.ropeproject

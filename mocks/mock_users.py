@@ -3,7 +3,7 @@ from app import users
 
 
 @pytest.fixture(scope="function")
-def gen_user(request):
+def mock_user(request):
     """Generate a User object with the value "mockuser"
     for username and password.
 
@@ -12,7 +12,7 @@ def gen_user(request):
     """
     user = users.models.User(
         username="mockuser",
-        password=get_hmac("mockuser")
+        password="mockuser"
     )
     user.save()
 
@@ -26,3 +26,14 @@ def gen_user(request):
     request.addfinalizer(del_user)
 
     return user
+
+
+@pytest.fixture(scope="function")
+def app_db(request):
+    """TODO: Docstring for app_db.
+
+    :request: TODO
+    :returns: TODO
+
+    """
+    pass
