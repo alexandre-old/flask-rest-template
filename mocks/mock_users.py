@@ -26,14 +26,3 @@ def mock_user(request):
     request.addfinalizer(del_user)
 
     return user
-
-
-@pytest.fixture(scope="function")
-def app_db(request):
-    """TODO: Docstring for app_db.
-
-    :request: TODO
-    :returns: TODO
-
-    """
-    pass
