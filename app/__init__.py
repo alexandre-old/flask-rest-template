@@ -1,5 +1,5 @@
 import flask
-from . import extensions, users, config
+from . import extensions, users, config, auth
 
 
 def create_app(config_name):
@@ -34,6 +34,7 @@ def register_extensions(app):
     extensions.jwt.init_app(app)
     extensions.api.init_app(app)
 
+    auth.define_jwt_handlers(extensions.jwt)
     return None
 
 
