@@ -1,5 +1,7 @@
 # Flask REST Template
 
+[![Code Health](https://landscape.io/github/alexandre/flask-rest-tmp/master/landscape.svg?style=flat)](https://landscape.io/github/alexandre/flask-rest-tmp/master)
+
 A template or boilerplate for a Flask REST application. This template starts with flask-restul, mongoengine, gunicorn 
 and more...there are the requirements to deploy on heroku.
 
