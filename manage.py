@@ -14,8 +14,8 @@ manager = Manager(app)
 
 
 def make_shell_context():
-    """TODO: Docstring for make_shell_context.
-    :returns: TODO
+    """Define a dict with the Flask app and db connection object
+    :returns: a dict
 
     """
     return {'app': app, 'db': db}

@@ -3,10 +3,10 @@ from . import extensions, users, config, auth
 
 
 def create_app(config_name):
-    """TODO: Docstring for create_app.
+    """Flask app factory
 
-    :config_name: TODO
-    :returns: TODO
+    :config_name: a string that represents a config.
+    :returns: Flask app
 
     """
     app = flask.Flask(__name__)
@@ -24,10 +24,10 @@ def create_app(config_name):
 
 
 def register_extensions(app):
-    """TODO: Docstring for register_extensions.
+    """Initialize all used extensions.
 
-    :app: TODO
-    :returns: TODO
+    :app: a Flask app
+    :returns: just a None value (it's not important)
 
     """
     extensions.db.init_app(app)
@@ -39,10 +39,10 @@ def register_extensions(app):
 
 
 def register_blueprints(app):
-    """TODO: Docstring for register_blueprints.
+    """Register all created blueprints.
 
-    :app: TODO
-    :returns: TODO
+    :app: a Flask app
+    :returns: just a None value (it's not important)
 
     """
     app.register_blueprint(users.blueprint)
