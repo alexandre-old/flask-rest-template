@@ -7,4 +7,11 @@ class User(db.Document):
 
     username = db.StringField()
     password = db.StringField()
-    active = db.BooleanField(default=True)
+
+    @classmethod
+    def get_fields_list(self):
+        """TODO: Docstring for fields.
+        :returns: TODO
+
+        """
+        return list(self._fields)
