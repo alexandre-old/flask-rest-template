@@ -1,0 +1,13 @@
+{
+  "db_connection": {
+    "db": "development",
+    "username": "",
+    "password": "",
+    "host": "localhost",
+    "port": 27017
+  },
+  "app_secret_key": {
+    "key": ""
+  }
+
+  }
