@@ -1,7 +1,0 @@
-{
-	"DB": "development",
-	"USERNAME": null,
-	"PASSWORD": null,
-	"HOST": "localhost",
-	"PORT": 27017
-}
