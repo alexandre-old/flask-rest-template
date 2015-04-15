@@ -1,0 +1,13 @@
+{
+  "db_connection": {
+    "db": "",
+    "username": "",
+    "password": "",
+    "host": "",
+    "port": ""
+  },
+  "app_secret_key": {
+    "key": ""
+  }
+
+  }
