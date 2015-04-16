@@ -2,15 +2,33 @@
 
 [![Code Health](https://landscape.io/github/alexandre/flask-rest-tmp/master/landscape.svg?style=flat)](https://landscape.io/github/alexandre/flask-rest-tmp/master)
 
-A template or boilerplate for a Flask REST application. This template starts with flask-restul, mongoengine, gunicorn 
-and more...there are the requirements to deploy on heroku.
+A template or boilerplate for a Flask REST application.
 
-I hope start a branch using SQLAlchemy too...
+# About the default packages/libs:
 
-# How to test or start a project using this template:
+The initial libs are:
+* Flask-Restful ->
+* Flask-JWT ->
+* Py.test ->
+* MongoEngine or SQLAlchemy ->
+* Gunicorn ->
 
-* Clone this repo: ```git clone https://github.com/alexandre/flask-rest-tmp```
-* Install the dependencies: ```pip install -r requirements.txt```
+# About the initial features:
+
+* \[TODO\] The template starts with a basic auth using JWT and a really simple CRUD for users. The CRUD is because I would like a way to create an example using blueprints.
+* \[ TODO \] An initial approach to use py.test with a simple mock module.
+* \[ TODO \] A simples doc module with basic files about the auth, setups and etc.
+
+Basicly, this features are just examples.
+
+# About the branches:
+
+* __master__: The master branch is a template using MongoEngine and Heroku config. This branch also a simple version, for example, without celery.
+* \[TODO\] __master-with-sqlalchemy__: As the name suppos, this branch is just the master branch using sqlalchemy.
+* \[TODO\] __mongo-celery-nginx__: This branch is the master branch with an initial config to use celery. Also there is some tips to set up this app using Nginx.
+* \[TODO\] __sqlalchemy-celery-nginx__: ...you know...using sqlalchemy.
+
+This branches are specific branches, beyond this ones there are the workflow branches (development, release, issue/feature).
 
 # About the license:
 
@@ -28,9 +46,9 @@ license, but if I choose another license, I'm sure that would be GPL/AGPL V3. =]
 * Flaskbook by [Miguel Grinberg](https://github.com/miguelgrinberg)
 * Some questions in Stack Overflow or tweets that I don't have a link. =P
 
-# About the design:
+# Python2 or Python3 ?
 
-I will start to write about my studies [here](http://alexandre.github.io), but in portuguese. =]
+I'm using __Python 3.4.X__.
 
 # P.S:
 
