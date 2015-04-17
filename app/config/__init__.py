@@ -1,86 +1,63 @@
-import json
-import os
+from . import development, testing, production
 
 
-class Config(object):
+def set_app_config_keys(app, settings):
+    """Load all flask.Flask config vars.
 
-    """Docstring for Config. """
+    :app: a flask.Flask object
+    :settings: a module with config vars
+    :returns: None
 
-    _settings = None
-    _db_connection = None
+    """
+    # create a unique dict with all config vars
+    all_config_vars = dict(
+        list(settings.FLASK_VARS.items()) +
+        list(settings.FLASK_JWT_VARS.items()) +
+        list(settings.DB_CONNECTION.items())
+    )
 
-    def __init__(self, settings_file):
-        """TODO: Docstring for __init__.
-
-        :settings_file: TODO
-        :returns: TODO
-
-        """
-        self._set_settings(settings_file)
-        self._set_db_connection()
-
-    def _set_settings(self, settings_file_path):
-        """TODO: Docstring for _set_settings.
-
-        :settings_file: TODO
-        :returns: TODO
-
-        """
-        if not os.access(settings_file_path, os.R_OK):
-            raise ValueError('Invalid settings file path')
-
-        with os.open(settings_file_path) as settings_file:
-            self._settings = json.loads(settings_file)
-
-    def _set_db_connection(self):
-        """TODO: Docstring for _set_db_connection.
-        :returns: TODO
-
-        """
-        if not self._settings:
-            raise ValueError('Invalid Settings.')
-
-        self._db_connection = self._settings['db_connection']
-
-    @property
-    def db_connection(self):
-        """TODO: Docstring for db_connection.
-        :returns: TODO
-
-        """
-        return self._db_connection
+    for key, value in all_config_vars.items:
+        app.config[key] = value
 
 
-class DevelopmentConfig(Config):
+def development_config(app):
+    """Call the function responsable by load config vars
+    using 'development' settings.
 
-    """Docstring for DevelopmentConfig. """
+    :app: a flask.Flask object
+    :returns: None
 
-    def __init__(self, app):
-        """TODO: to be defined1. """
-        app.debug = True
-        return super(DevelopmentConfig, self).__init__('development.json')
-
-
-class TestingConfig(Config):
-
-    """Docstring for TestingConfig. """
-
-    def __init__(self, app):
-        """TODO: to be defined1. """
-        return super(TestingConfig, self).__init__('testing.json')
+    """
+    set_app_config_keys(app, development)
+    return None
 
 
-class ProductionConfig(Config):
+def testing_config(app):
+    """Call the function responsable by load config vars
+    using 'testing' settings.
 
-    """Docstring for ProductionConfig. """
+    :app: a flask.Flask object
+    :returns: None
 
-    def __init__(self, app):
-        """TODO: to be defined1. """
-        return super(ProductionConfig, self).__init__('production.json')
+    """
+    set_app_config_keys(app, testing)
+    return None
+
+
+def production_config(app):
+    """Call the function responsable by load config vars
+    using 'production' settings.
+
+    :app: a flask.Flask object
+    :returns: None
+
+    """
+    set_app_config_keys(app, production)
+    return None
 
 config = {
-    'development': DevelopmentConfig,
-    'testing': TestingConfig,
-    'production': ProductionConfig,
-    'default': DevelopmentConfig,
+    'development': development_config,
+    'testing': testing_config,
+    'production': production_config,
+    'default': development_config,
 }
