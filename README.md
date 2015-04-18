@@ -1,6 +1,6 @@
 # Flask REST Template
 
-[![Code Health](https://landscape.io/github/alexandre/flask-rest-tmp/master/landscape.svg?style=flat)](https://landscape.io/github/alexandre/flask-rest-tmp/master)
+[![Code Health](https://landscape.io/github/alexandre/flask-rest-template/master/landscape.svg?style=flat)](https://landscape.io/github/alexandre/flask-rest-template/master)
 
 A template or boilerplate for a Flask REST application.
 
