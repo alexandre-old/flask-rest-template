@@ -11,8 +11,9 @@ def create_app(config_name='default'):
     """
 
     app = flask.Flask(__name__)
-    app_conf = config.config[config_name](app)
-    app.config.from_object(app_conf)
+
+    # set the config vars using the config name and current_app
+    config.config[config_name](app)
 
     register_extensions(app)
     register_blueprints(app)
