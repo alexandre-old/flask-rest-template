@@ -29,7 +29,6 @@ def development_config(app):
 
     """
     set_app_config_keys(app, development)
-    return None
 
 
 def testing_config(app):
@@ -41,7 +40,6 @@ def testing_config(app):
 
     """
     set_app_config_keys(app, testing)
-    return None
 
 
 def production_config(app):
@@ -53,8 +51,8 @@ def production_config(app):
 
     """
     set_app_config_keys(app, production)
-    return None
 
+# Yep, I know I could use lambdas...
 config = {
     'development': development_config,
     'testing': testing_config,
