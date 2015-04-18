@@ -16,7 +16,7 @@ def set_app_config_keys(app, settings):
         list(settings.DB_CONNECTION.items())
     )
 
-    for key, value in all_config_vars.items:
+    for key, value in all_config_vars.items():
         app.config[key] = value
 
 
