@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 import os
 from flask.ext.script import Manager, Shell, Server
 from app import create_app
@@ -17,4 +18,8 @@ manager.add_command(
 manager.add_command(
     "startserver",
     Server(port=(os.getenv('FLASK_PORT') or 5000), host='0.0.0.0'))
+
+
+if __name__ == '__main__':
+    manager.run()
 
