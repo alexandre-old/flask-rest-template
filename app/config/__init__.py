@@ -13,7 +13,8 @@ def set_app_config_keys(app, settings):
     all_config_vars = dict(
         list(settings.FLASK_VARS.items()) +
         list(settings.FLASK_JWT_VARS.items()) +
-        list(settings.DB_CONNECTION.items())
+        list(settings.DB_CONNECTION.items()) +
+        list(settings.PASSLIB.items())
     )
 
     for key, value in all_config_vars.items():
