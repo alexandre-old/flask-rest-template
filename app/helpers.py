@@ -31,8 +31,11 @@ def encrypt_password(plaintext):
     :returns: a string object.
 
     """
-    return get_hash_algorithm(
-        flask.current_app.config['HASH_ALGORITHM']).encrypt(plaintext)
+
+    method = get_hash_algorithm(flask.current_app.config['HASH_ALGORITHM'])
+
+    return method.encrypt(
+        plaintext, salt=flask.current_app.config['HASH_SALT'])
 
 
 def verify_passowrd(password, hash):
@@ -43,5 +46,7 @@ def verify_passowrd(password, hash):
     :returns: True or False.
 
     """
-    return get_hash_algorithm(
-        flask.current_app.config['HASH_ALGORITHM']).verify(password, hash)
+
+    method = get_hash_algorithm(flask.current_app.config['HASH_ALGORITHM'])
+
+    return method.verify(password, hash)
