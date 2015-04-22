@@ -39,5 +39,5 @@ def test_encrypt_password(app):
 def test_verify_password():
 
     hash = helpers.encrypt_password("password")
-    assert helpers.verify_passowrd("password", hash) is True
-    assert helpers.verify_passowrd("invalid", hash) is False
+    assert helpers.verify_password("password", hash) is True
+    assert helpers.verify_password("invalid", hash) is False
