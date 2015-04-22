@@ -1,5 +1,6 @@
 import flask
 from . import extensions, config, users
+from .auth import jwt
 
 
 def create_app(config_name='default'):
@@ -17,6 +18,7 @@ def create_app(config_name='default'):
 
     register_extensions(app)
     register_blueprints(app)
+    jwt.set_jwt_handlers(extensions.jwt)
 
     return app
 
