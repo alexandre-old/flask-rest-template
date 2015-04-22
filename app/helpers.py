@@ -1,5 +1,5 @@
 import flask
-import passlib
+from passlib import hash
 
 
 def get_hash_algorithm(hash_algorithm):
@@ -11,8 +11,8 @@ def get_hash_algorithm(hash_algorithm):
     """
 
     available_methods = {
-        'SHA256': passlib.hash.sha256_crypt,
-        'SHA512': passlib.hash.sha512_crypt,
+        'SHA256': hash.sha256_crypt,
+        'SHA512': hash.sha512_crypt,
     }
 
     if not isinstance(hash_algorithm, str):
