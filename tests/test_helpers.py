@@ -41,3 +41,13 @@ def test_verify_password():
     hash = helpers.encrypt_password("password")
     assert helpers.verify_password("password", hash) is True
     assert helpers.verify_password("invalid", hash) is False
+
+
+def test_standardize_api_response_valid_results(result, expected):
+    pass
+
+
+def test_standardize_api_response_invalid_result_key(result, expected):
+    with pytest.raises(ValueError) as error:
+        helpers.standardize_api_response(result)
+    assert error.message == expected
