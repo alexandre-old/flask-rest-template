@@ -1,5 +1,6 @@
 from flask.ext.restful import Resource
 from flask_jwt import jwt_required
+from . import controllers
 
 
 class UsersAPI(Resource):
@@ -14,5 +15,6 @@ class UsersAPI(Resource):
         :returns: One or all available users.
 
         """
-        pass
 
+        result = controllers.get_users(username)
+        return result
