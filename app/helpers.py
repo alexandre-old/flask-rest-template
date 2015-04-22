@@ -68,3 +68,15 @@ def verify_password(password, hash):
     method = get_hash_algorithm(flask.current_app.config['HASH_ALGORITHM'])
 
     return method.verify(password, hash)
+
+
+def standardize_api_response(result):
+    """Creates a standardized response. This function eval the result key
+    to define the status code and data.
+
+    :result: a dict object with the operation result and on of the keys:
+        'success', 'error', 'created', 'updated' or 'no-data'.
+    :returns: TODO
+
+    """
+    pass
