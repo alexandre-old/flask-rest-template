@@ -1,9 +1,9 @@
 from flask import Blueprint
-from flask.ext.restful import Api
+from app import helpers
 from . import resources
 
 
 blueprint = Blueprint('users', __name__)
-api = Api(blueprint, prefix='/api')
+api = helpers.MyApi(blueprint, prefix='/api')
 
 api.add_resource(resources.UsersAPI, '/users')
