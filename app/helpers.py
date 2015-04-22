@@ -1,5 +1,23 @@
+import collections
 import flask
 from passlib import hash
+from flask.ext.restful import Api
+from flask_jwt import JWTError
+
+
+class MyApi(Api):
+    """A simple class to keep the default flask_jwt.JWTError behaviour."""
+
+    def handle_error(self, e):
+        if isinstance(e, JWTError):
+            return flask.jsonify(
+                collections.OrderedDict([
+                    ('status_code', e.status_code),
+                    ('error', e.error),
+                    ('description', e.description),
+                ])
+            ), e.status_code, e.headers
+        return super(MyApi, self).handle_error(e)
 
 
 def get_hash_algorithm(hash_algorithm):
