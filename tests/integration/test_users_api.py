@@ -23,14 +23,26 @@ def test_get_users_without_username(client, mock_user):
     user = mock_user('user', 'password')
     jwt_header = get_jwt_auth_header('user', 'password', client)
 
-    response = jrequest('GET', '/api/users', client, jwt_header)
+    response = json.loads(jrequest(
+        'GET', '/api/users', client, jwt_header).data.decode('utf-8'))
+    response = json.loads(response)
 
     expected = {
+        'status_code': 200,
         'data': [{
             'id': str(user.id),
-            'username': user.username,
-        }]
+            'username': user.username
+        }],
+        'description': 'Successful Operation',
     }
 
-    assert response.status_code == 200
-    assert json.loads(response.data.decode('utf-8'))['data'] == expected
+    assert sorted(response.items()) == sorted(expected.items())
+
+
+def test_get_users_specifing_username(client, mock_user):
+    clear_db()
+    user = mock_user('user', 'password')
+    jwt_header = get_jwt_auth_header('user', 'password', client)
+
+    response = json.loads(jrequest('GET', '/api/users', client, jwt_header))
+
