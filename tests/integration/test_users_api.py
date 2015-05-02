@@ -44,5 +44,17 @@ def test_get_users_specifing_username(client, mock_user):
     user = mock_user('user', 'password')
     jwt_header = get_jwt_auth_header('user', 'password', client)
 
-    response = json.loads(jrequest('GET', '/api/users', client, jwt_header))
+    response = json.loads(jrequest(
+        'GET', '/api/users', client, jwt_header).data.decode('utf-8'))
+    response = json.loads(response)
 
+    expected = {
+        'status_code': 200,
+        'data': [{
+            'id': str(user.id),
+            'username': user.username
+        }],
+        'description': 'Successful Operation',
+    }
+
+    assert sorted(response.items()) == sorted(expected.items())
