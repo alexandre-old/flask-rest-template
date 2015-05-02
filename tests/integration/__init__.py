@@ -34,10 +34,11 @@ def jrequest(method, url, client, headers={}, data=None):
     """
 
     allowed_methods = {
-        'GET': lambda url, headers: client.get(url, headers=headers),
+        'GET': lambda: client.get(url, headers=headers),
+        'POST': lambda: client.post(url, headers=headers, data=data)
     }
 
     if 'Content-Type' not in headers:
         headers.update({'Content-Type': 'application/json'})
 
-    return allowed_methods[method](url, headers)
+    return allowed_methods[method]()
