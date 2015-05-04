@@ -2,6 +2,8 @@
 
 [![Code Health](https://landscape.io/github/alexandre/flask-rest-template/master/landscape.svg?style=flat)](https://landscape.io/github/alexandre/flask-rest-template/master)
 
+[![Build Status](https://travis-ci.org/alexandre/flask-rest-template.svg)](https://travis-ci.org/alexandre/flask-rest-template)
+
 A template or boilerplate for a Flask REST application.
 
 # About the default packages/libs:
