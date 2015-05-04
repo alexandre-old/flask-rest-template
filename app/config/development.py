@@ -26,3 +26,7 @@ FLASK_JWT_VARS = {
 }
 
 # another third party libs...
+PASSLIB = {
+    'HASH_ALGORITHM': 'SHA512',
+    'HASH_SALT': 'HiMyNameIsGoku',
+}
