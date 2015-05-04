@@ -81,19 +81,21 @@ def standardize_api_response(function):
         error -> Bad Request, 400
         created -> POST, 201
         updated -> PUT, 200
+        deleted -> DELETE, 200
         no-data -> No Content, 204
 
     :returns: json.dumps(response), staus code
     """
 
     available_result_keys = [
-        'success', 'error', 'created', 'updated', 'no-data']
+        'success', 'error', 'created', 'updated', 'deleted', 'no-data']
 
     status_code_and_descriptions = {
         'success': (200, 'Successful Operation'),
         'error': (400, 'Bad Request'),
         'created': (201, 'Successfully created'),
         'updated': (200, 'Successfully updated'),
+        'deleted': (200, 'Successfully deleted'),
         'no-data': (204, '')
     }
 
