@@ -3,7 +3,7 @@ from . import models
 
 
 def is_an_available_username(username):
-    """Verify if an username is available
+    """Verify if an username is available.
 
     :username: a string object
     :returns: True or False
@@ -38,10 +38,8 @@ def create_or_update_user(username, password, user_id=None):
 
     """
 
-    if not is_an_available_username(username):
-        return {
-            'error': 'The user {!r} already exists.'.format(username)
-        }
+    if is_an_available_username(username) is False:
+        return {'error': 'The user {!r} already exists.'.format(username)}
 
     try:
         query = {'id': user_id} if user_id else {'username': username}
@@ -63,7 +61,7 @@ def create_or_update_user(username, password, user_id=None):
 def delete_user(user_id):
     """Delete an user by user id.
 
-    :user_id: a st object
+    :user_id: a str object
     :returns: a dict with the operation result
 
     """

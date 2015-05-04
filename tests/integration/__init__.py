@@ -35,7 +35,9 @@ def jrequest(method, url, client, headers={}, data=None):
 
     allowed_methods = {
         'GET': lambda: client.get(url, headers=headers),
-        'POST': lambda: client.post(url, headers=headers, data=data)
+        'POST': lambda: client.post(url, headers=headers, data=data),
+        'PUT': lambda: client.put(url, headers=headers, data=data),
+        'DELETE': lambda: client.delete(url, headers=headers),
     }
 
     if 'Content-Type' not in headers:
