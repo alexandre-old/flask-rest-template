@@ -1,13 +1,10 @@
-import datetime
-
-
 # database connection data
 DB_CONNECTION = {
     "MONGODB_DB": "",
     "MONGODB_USERNAME": "",
     "MONGODB_PASSWORD": "",
     "MONGODB_HOST": "",
-    "MONGODB_PORT": 27017
+    "MONGODB_PORT": None
 }
 
 # database uri
@@ -20,8 +17,10 @@ FLASK_VARS = {
 
 # flask-jwt vars
 FLASK_JWT_VARS = {
-    'JWT_AUTH_URL_RULE': '',
-    'JWT_EXPIRATION_DELTA': datetime.timedelta(days=1)
+    'JWT_AUTH_URL_RULE': '/api/auth',
 }
 
 # another third party libs...
+PASSLIB = {
+    'HASH_ALGORITHM': 'SHA512',
+}

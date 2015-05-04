@@ -1,7 +1,10 @@
 from flask import Blueprint
-from flask.ext.restful import Api
+from app import helpers
+from . import resources
 
 
 blueprint = Blueprint('users', __name__)
-api = Api(prefix='/api')
-api.init_app(blueprint)
+api = helpers.MyApi(blueprint, prefix='/api')
+
+api.add_resource(resources.UsersAPI, '/users')
+api.add_resource(resources.UserAPI, '/user', '/user/<user_id>')

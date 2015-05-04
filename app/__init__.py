@@ -1,12 +1,13 @@
 import flask
 from . import extensions, config, users
+from .auth import jwt
 
 
 def create_app(config_name='default'):
-    """TODO: Docstring for create_app.
+    """Flask app factory
 
-    :config_name: TODO
-    :returns: TODO
+    :config_name: a string object.
+    :returns: flask.Flask object
 
     """
 
@@ -17,15 +18,17 @@ def create_app(config_name='default'):
 
     register_extensions(app)
     register_blueprints(app)
+    jwt.set_jwt_handlers(extensions.jwt)
 
     return app
 
 
 def register_extensions(app):
-    """TODO: Docstring for register_extensions.
+    """Call the method 'init_app' to register the extensions in the flask.Flask
+    object passed as parameter.
 
-    :app: TODO
-    :returns: TODO
+    :app: flask.Flask object
+    :returns: None
 
     """
 
@@ -34,10 +37,10 @@ def register_extensions(app):
 
 
 def register_blueprints(app):
-    """TODO: Docstring for register_blueprints.
+    """Register all blueprints.
 
-    :app: TODO
-    :returns: TODO
+    :app: flask.Flask object
+    :returns: None
 
     """
     app.register_blueprint(users.blueprint)
