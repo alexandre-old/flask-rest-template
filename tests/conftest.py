@@ -32,4 +32,6 @@ def client(app):
 
     """
 
-    return app.test_client
+    return app.test_client()
+
+from .mocks.users import mock_user  # noqa

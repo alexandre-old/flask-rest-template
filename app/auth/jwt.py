@@ -13,7 +13,7 @@ def set_jwt_handlers(jwt):
 
     @jwt.authentication_handler
     def authenticate(username, password):
-        user = models.User.objects(email=username).first()
+        user = models.User.objects(username=username).first()
 
         if user and helpers.verify_password(password, user.password):
             return user
@@ -27,7 +27,7 @@ def set_jwt_handlers(jwt):
     def make_payload(user):
         return {
             'user_id': str(user.id),
-            'exp': (datetime.utcnow() +
+            'exp': (datetime.datetime.utcnow() +
                     current_app.config['JWT_EXPIRATION_DELTA']).isoformat()
         }
 
