@@ -4,7 +4,7 @@
 
 [![Build Status](https://travis-ci.org/alexandre/flask-rest-template.svg)](https://travis-ci.org/alexandre/flask-rest-template)
 
-[![Coverage Status](https://coveralls.io/repos/alexandre/flask-rest-template/badge.svg)](https://coveralls.io/r/alexandre/flask-rest-template)
+[![Coverage Status](https://coveralls.io/repos/alexandre/flask-rest-template/badge.svg?branch=master)](https://coveralls.io/r/alexandre/flask-rest-template?branch=master)
 
 # About the project:
 ## Python version
