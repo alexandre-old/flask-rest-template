@@ -5,6 +5,6 @@ services: mongodb
 install:
   - "pip install -r requirements.txt"
   - "pip install -r requirements_test.txt"
-script: py.test -vvv tests/
+script: py.test tests -vrsx --cov app --pylama
 after_success:
   - coveralls
