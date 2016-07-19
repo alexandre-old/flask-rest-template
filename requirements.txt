@@ -5,7 +5,7 @@ flask-mongoengine==0.7.5
 Flask-REST==1.1
 Flask-RESTful==0.3.5
 Flask-Script==2.0.5
-Flask-WTF==0.11
+Flask-WTF==0.12
 itsdangerous==0.24
 Jinja2==2.8
 MarkupSafe==0.23
