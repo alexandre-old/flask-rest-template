@@ -1,6 +1,6 @@
 cov-core==1.15.0
 coveralls==1.1
 coverage==4.1
-pylama==6.3.1
+pylama==7.0.9
 pytest==2.9.2
 pytest-cov==1.8.1
