@@ -10,7 +10,7 @@ itsdangerous==0.24
 Jinja2==2.8
 MarkupSafe==0.23
 mongoengine==0.10.6
-passlib==1.6.2
+passlib==1.6.5
 py==1.4.31
 pymongo==3.3.0
 pytz==2016.6.1
