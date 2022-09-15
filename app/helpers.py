@@ -84,7 +84,7 @@ def standardize_api_response(function):
         deleted -> DELETE, 200
         no-data -> No Content, 204
 
-    :returns: json.dumps(response), staus code
+    :returns: json.dumps(response), status code
     """
 
     available_result_keys = [

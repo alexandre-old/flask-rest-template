@@ -22,7 +22,7 @@ def set_app_config_keys(app, settings):
 
 
 def development_config(app):
-    """Call the function responsable by load config vars
+    """Call the function responsible by load config vars
     using 'development' settings.
 
     :app: a flask.Flask object
@@ -33,7 +33,7 @@ def development_config(app):
 
 
 def testing_config(app):
-    """Call the function responsable by load config vars
+    """Call the function responsible by load config vars
     using 'testing' settings.
 
     :app: a flask.Flask object
@@ -44,7 +44,7 @@ def testing_config(app):
 
 
 def production_config(app):
-    """Call the function responsable by load config vars
+    """Call the function responsible by load config vars
     using 'production' settings.
 
     :app: a flask.Flask object
