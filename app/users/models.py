@@ -9,7 +9,7 @@ class User(db.Document):
     password = db.StringField()
 
     def to_json2(self):
-        """Returns a json representantion of the user.
+        """Returns a json representation of the user.
         :returns: a json object.
 
         """

@@ -29,7 +29,7 @@ def jrequest(method, url, client, headers={}, data=None):
     :headers: Optional headers.
         As default uses Content-Type: application/json
     :data: Optional data for POST or PUT requests
-    :returns: the request reponse.
+    :returns: the request response.
 
     """
 
